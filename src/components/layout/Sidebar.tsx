@@ -20,7 +20,7 @@ import { UserRole } from "@/lib/auth-mock";
 
 const SIDEBAR_ITEMS: Record<Exclude<UserRole, 'buyer'>, { label: string; href: string; icon: any }[]> = {
   si_partner: [
-    { label: "프로필 대시보드", href: "/partner/profile", icon: LayoutDashboardIcon },
+    { label: "프로필 대시보드", href: "/partner/profile", icon: BarChart3 },
     { label: "받은 제안", href: "/partner/proposals", icon: MessageSquare },
     { label: "뱃지 목록", href: "/partner/badges", icon: Award },
     { label: "계약 관리", href: "/partner/contracts", icon: FileText },
@@ -42,10 +42,6 @@ const SIDEBAR_ITEMS: Record<Exclude<UserRole, 'buyer'>, { label: string; href: s
   ],
 };
 
-function LayoutDashboardIcon(props: any) {
-  return <BarChart3 {...props} />;
-}
-
 export function Sidebar({ role }: { role: Exclude<UserRole, 'buyer'> }) {
   const pathname = usePathname();
   const items = SIDEBAR_ITEMS[role];
@@ -58,7 +54,7 @@ export function Sidebar({ role }: { role: Exclude<UserRole, 'buyer'> }) {
             key={item.href}
             href={item.href}
             className={cn(
-              "flex items-center gap-3 px-4 py-3 rounded-none text-[10px] font-black uppercase tracking-widest transition-all",
+              "flex items-center gap-3 px-4 py-3 rounded-none text-[11px] font-black uppercase tracking-widest transition-all",
               pathname === item.href || (item.href !== '/admin' && pathname.startsWith(item.href))
                 ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(0,102,255,0.3)]" 
                 : "text-white/40 hover:bg-white/5 hover:text-white"
@@ -70,10 +66,10 @@ export function Sidebar({ role }: { role: Exclude<UserRole, 'buyer'> }) {
         ))}
       </nav>
       <div className="mt-auto pt-4 border-t border-white/5">
-        <p className="text-[10px] text-white/20 uppercase tracking-[0.3em] font-black px-4 py-2">Support_Nodes</p>
+        <p className="text-[11px] text-white/20 uppercase tracking-[0.3em] font-black px-4 py-2">Support_Nodes</p>
         <Link 
           href="/support" 
-          className="flex items-center gap-3 px-4 py-3 text-[10px] font-bold text-white/40 hover:text-primary transition-colors"
+          className="flex items-center gap-3 px-4 py-3 text-[11px] font-bold text-white/40 hover:text-primary transition-colors"
         >
           <MessageSquare className="h-4 w-4" />
           <span>HELP_DESK</span>

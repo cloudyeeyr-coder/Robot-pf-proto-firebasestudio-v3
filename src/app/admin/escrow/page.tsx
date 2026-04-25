@@ -61,7 +61,7 @@ export default function AdminEscrowPage() {
     <div className="space-y-12 pb-24">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-[10px] font-black text-primary uppercase tracking-[0.3em]">
+          <div className="flex items-center gap-2 text-[11px] font-black text-primary uppercase tracking-[0.3em]">
             <CreditCard className="h-3 w-3" />
             Escrow_Liquidity_Protocol
           </div>
@@ -90,12 +90,12 @@ export default function AdminEscrowPage() {
               <Table>
                 <TableHeader className="bg-white/5">
                   <TableRow className="border-white/10 hover:bg-transparent">
-                    <TableHead className="text-[10px] font-black uppercase text-white/40">TX_ID</TableHead>
-                    <TableHead className="text-[10px] font-black uppercase text-white/40">Buyer / Partner</TableHead>
-                    <TableHead className="text-[10px] font-black uppercase text-white/40">Amount</TableHead>
-                    <TableHead className="text-[10px] font-black uppercase text-white/40">Status</TableHead>
-                    <TableHead className="text-[10px] font-black uppercase text-white/40">Audit_Log</TableHead>
-                    <TableHead className="text-right text-[10px] font-black uppercase text-white/40">Execute</TableHead>
+                    <TableHead className="text-[11px] font-black uppercase text-white/40">TX_ID</TableHead>
+                    <TableHead className="text-[11px] font-black uppercase text-white/40">Buyer / Partner</TableHead>
+                    <TableHead className="text-[11px] font-black uppercase text-white/40">Amount</TableHead>
+                    <TableHead className="text-[11px] font-black uppercase text-white/40">Status</TableHead>
+                    <TableHead className="text-[11px] font-black uppercase text-white/40">Audit_Log</TableHead>
+                    <TableHead className="text-right text-[11px] font-black uppercase text-white/40">Execute</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -103,11 +103,11 @@ export default function AdminEscrowPage() {
                     .filter(e => tabStatus === "all" || e.status === tabStatus)
                     .map((escrow) => (
                       <TableRow key={escrow.id} className="border-white/5 hover:bg-white/5 transition-colors">
-                        <TableCell className="font-mono text-[10px] text-white/60">{escrow.id}</TableCell>
+                        <TableCell className="font-mono text-[11px] text-white/60">{escrow.id}</TableCell>
                         <TableCell>
                           <div className="flex flex-col">
                             <span className="font-black text-sm">{escrow.buyer}</span>
-                            <span className="text-[10px] text-muted-foreground">{escrow.partner}</span>
+                            <span className="text-[11px] text-muted-foreground">{escrow.partner}</span>
                           </div>
                         </TableCell>
                         <TableCell className="font-black text-white italic">
@@ -118,7 +118,7 @@ export default function AdminEscrowPage() {
                             {escrow.status}
                           </Badge>
                         </TableCell>
-                        <TableCell className="max-w-[200px] truncate text-[10px] text-white/40 italic">
+                        <TableCell className="max-w-[200px] truncate text-[11px] text-white/40 italic">
                           {escrow.memo || "No records."}
                         </TableCell>
                         <TableCell className="text-right">
@@ -126,7 +126,7 @@ export default function AdminEscrowPage() {
                             {escrow.status === "pending" && (
                               <AlertDialog>
                                 <AlertDialogTrigger asChild>
-                                  <Button size="sm" className="h-8 bg-primary text-primary-foreground font-black text-[10px] rounded-none">CONFIRM_DEPOSIT</Button>
+                                  <Button size="sm" className="h-8 bg-primary text-primary-foreground font-black text-[11px] rounded-none">CONFIRM_DEPOSIT</Button>
                                 </AlertDialogTrigger>
                                 <AlertDialogContent className="glass-panel border-white/10 rounded-none">
                                   <AlertDialogHeader>
@@ -135,7 +135,7 @@ export default function AdminEscrowPage() {
                                   </AlertDialogHeader>
                                   <div className="py-4 space-y-4">
                                     <div className="space-y-2">
-                                      <p className="text-[10px] font-black text-primary uppercase tracking-widest">Admin_Security_Memo *</p>
+                                      <p className="text-[11px] font-black text-primary uppercase tracking-widest">Admin_Security_Memo *</p>
                                       <Textarea 
                                         placeholder="입금 일시, 은행명 등을 기록하십시오 (최소 5자)" 
                                         className="bg-background/50 border-white/10 rounded-none h-24 focus:border-primary"
@@ -160,7 +160,7 @@ export default function AdminEscrowPage() {
                             {escrow.status === "held" && (
                               <AlertDialog>
                                 <AlertDialogTrigger asChild>
-                                  <Button size="sm" className="h-8 bg-green-500 text-black hover:bg-green-400 font-black text-[10px] rounded-none">RELEASE_FUNDS</Button>
+                                  <Button size="sm" className="h-8 bg-green-500 text-black hover:bg-green-400 font-black text-[11px] rounded-none">RELEASE_FUNDS</Button>
                                 </AlertDialogTrigger>
                                 <AlertDialogContent className="glass-panel border-white/10 rounded-none">
                                   <AlertDialogHeader>

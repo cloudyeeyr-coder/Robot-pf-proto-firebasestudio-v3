@@ -1,4 +1,6 @@
 
+"use client"
+
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,6 +13,7 @@ import {
   Zap,
   Terminal
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const KPIS = [
   {
@@ -56,7 +59,7 @@ export default function AdminDashboard() {
     <div className="space-y-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-[10px] font-black text-primary uppercase tracking-[0.3em]">
+          <div className="flex items-center gap-2 text-[11px] font-black text-primary uppercase tracking-[0.3em]">
             <Terminal className="h-3 w-3" />
             System_Control_Center
           </div>
@@ -66,7 +69,7 @@ export default function AdminDashboard() {
         </div>
         <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10">
           <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest font-bold">Node_Sync: Optimal</span>
+          <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest font-bold">Node_Sync: Optimal</span>
         </div>
       </div>
 
@@ -77,14 +80,14 @@ export default function AdminDashboard() {
             
             <CardHeader className="space-y-1 pb-2">
               <div className="flex items-center justify-between">
-                <p className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">{kpi.title}</p>
+                <p className="text-[11px] font-black text-muted-foreground uppercase tracking-widest">{kpi.title}</p>
                 <kpi.icon className={cn("h-4 w-4", kpi.color)} />
               </div>
               <CardTitle className="text-5xl font-black tracking-tighter">{kpi.value}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest">{kpi.label}</p>
-              <Button asChild variant="ghost" className="w-full h-10 rounded-none border border-white/5 hover:bg-white/5 text-[10px] font-black uppercase tracking-widest group/btn">
+              <p className="text-[11px] font-bold text-white/60 uppercase tracking-widest">{kpi.label}</p>
+              <Button asChild variant="ghost" className="w-full h-10 rounded-none border border-white/5 hover:bg-white/5 text-[11px] font-black uppercase tracking-widest group/btn">
                 <Link href={kpi.href}>
                   Access Protocol
                   <ArrowRight className="ml-2 h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
@@ -99,10 +102,10 @@ export default function AdminDashboard() {
         <Card className="lg:col-span-2 glass-panel border-white/10 rounded-none">
           <CardHeader>
             <CardTitle className="text-xl font-black uppercase tracking-tighter italic">System_Activity_Live</CardTitle>
-            <CardDescription className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground">실시간 트랜잭션 스트림</CardDescription>
+            <CardDescription className="text-[11px] uppercase font-bold tracking-widest text-muted-foreground">실시간 트랜잭션 스트림</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4 font-mono text-[10px]">
+            <div className="space-y-4 font-mono text-[11px]">
               {[
                 { time: "14:22:05", event: "ESCROW_DEPOSIT", details: "Node_B-102 confirmed $12,400", status: "success" },
                 { time: "14:20:12", event: "AS_TICKET_NEW", details: "Urgent request from Client_X", status: "warning" },
@@ -127,11 +130,11 @@ export default function AdminDashboard() {
         <Card className="glass-panel border-white/10 rounded-none">
           <CardHeader>
             <CardTitle className="text-xl font-black uppercase tracking-tighter italic">Risk_Metrics</CardTitle>
-            <CardDescription className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground">보안 및 리스크 분석</CardDescription>
+            <CardDescription className="text-[11px] uppercase font-bold tracking-widest text-muted-foreground">보안 및 리스크 분석</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <div className="flex justify-between text-[10px] font-black uppercase">
+              <div className="flex justify-between text-[11px] font-black uppercase">
                 <span>Network Integrity</span>
                 <span className="text-primary">99.8%</span>
               </div>
@@ -140,7 +143,7 @@ export default function AdminDashboard() {
               </div>
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between text-[10px] font-black uppercase">
+              <div className="flex justify-between text-[11px] font-black uppercase">
                 <span>SLA Compliance</span>
                 <span className="text-secondary">94.2%</span>
               </div>
@@ -151,7 +154,7 @@ export default function AdminDashboard() {
             <div className="pt-4 border-t border-white/5 space-y-4">
               <div className="flex items-center gap-3">
                 <Zap className="h-4 w-4 text-primary animate-pulse" />
-                <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Anomaly Detection: Active</span>
+                <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">Anomaly Detection: Active</span>
               </div>
             </div>
           </CardContent>
@@ -160,5 +163,3 @@ export default function AdminDashboard() {
     </div>
   );
 }
-
-import { cn } from "@/lib/utils";
