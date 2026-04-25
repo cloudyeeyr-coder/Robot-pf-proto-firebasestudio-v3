@@ -1,13 +1,33 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Orbit, Terminal, Activity, Zap, Shield, Globe } from "lucide-react";
+import { 
+  ArrowRight, 
+  Cpu, 
+  Terminal, 
+  Activity, 
+  Zap, 
+  Shield, 
+  Globe, 
+  ChevronLeft, 
+  ChevronRight 
+} from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function HomePage() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-robot');
+  const heroImages = PlaceHolderImages.filter(img => 
+    ['hero-robot', 'industrial-arm', 'logistics-bot', 'humanoid-interface'].includes(img.id)
+  );
 
   return (
     <div className="min-h-screen flex flex-col tech-grid relative overflow-hidden">
@@ -23,7 +43,7 @@ export default function HomePage() {
               <div className="space-y-8 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-primary/20 border border-primary/50 text-primary text-[10px] font-black uppercase tracking-[0.2em] animate-pulse">
                   <Activity className="h-3 w-3" />
-                  <span>System Initialized: Core 2.0</span>
+                  <span>System Initialized: Ropto Core 2.0</span>
                 </div>
                 
                 <h1 className="text-6xl md:text-8xl font-black leading-none tracking-tighter">
@@ -67,28 +87,46 @@ export default function HomePage() {
 
               <div className="relative group">
                 <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full pointer-events-none group-hover:bg-primary/30 transition-all duration-1000" />
-                <div className="relative aspect-square max-w-xl mx-auto animate-float">
+                <div className="relative aspect-square max-w-xl mx-auto">
                   <div className="absolute inset-0 border-[20px] border-white/5 rounded-full animate-[spin_20s_linear_infinite]" />
                   <div className="absolute inset-8 border border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
                   
-                  <div className="absolute inset-0 flex items-center justify-center p-12">
-                    <div className="relative w-full h-full overflow-hidden rounded-full border-2 border-white/20 glass-panel">
-                      <Image 
-                        src={heroImage?.imageUrl || "https://picsum.photos/seed/robot/800/800"} 
-                        alt="Robotics Interface" 
-                        fill
-                        className="object-cover grayscale contrast-125 opacity-80 group-hover:scale-110 group-hover:grayscale-0 transition-all duration-700"
-                        priority
-                        data-ai-hint="industrial robot"
-                      />
-                      <div className="scan-line" />
-                    </div>
+                  <div className="absolute inset-0 flex items-center justify-center p-8 md:p-12">
+                    <Carousel className="w-full h-full">
+                      <CarouselContent className="h-full">
+                        {heroImages.map((image, index) => (
+                          <CarouselItem key={index} className="h-full">
+                            <div className="relative w-full h-full overflow-hidden rounded-full border-2 border-white/20 glass-panel animate-float">
+                              <Image 
+                                src={image.imageUrl} 
+                                alt={image.description} 
+                                fill
+                                className="object-cover grayscale contrast-125 opacity-80 group-hover:scale-110 group-hover:grayscale-0 transition-all duration-700"
+                                priority={index === 0}
+                                data-ai-hint={image.imageHint}
+                              />
+                              <div className="scan-line" />
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      
+                      {/* Custom Navigation Buttons */}
+                      <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+                        <CarouselPrevious className="static translate-y-0 h-10 w-10 bg-background/50 border-white/10 hover:bg-primary hover:text-white transition-all rounded-none skew-x-[-12deg]">
+                          <ChevronLeft className="h-6 w-6 skew-x-[12deg]" />
+                        </CarouselPrevious>
+                        <CarouselNext className="static translate-y-0 h-10 w-10 bg-background/50 border-white/10 hover:bg-primary hover:text-white transition-all rounded-none skew-x-[-12deg]">
+                          <ChevronRight className="h-6 w-6 skew-x-[12deg]" />
+                        </CarouselNext>
+                      </div>
+                    </Carousel>
                   </div>
 
                   {/* HUD Elements */}
-                  <div className="absolute -top-4 -right-4 glass-panel p-4 rounded-xl border-primary/30 flex items-center gap-3 animate-pulse">
+                  <div className="absolute -top-4 -right-4 glass-panel p-4 rounded-xl border-primary/30 flex items-center gap-3 animate-pulse z-20">
                     <Terminal className="h-4 w-4 text-primary" />
-                    <span className="text-[10px] font-mono text-primary font-bold">MATCHING_ONLINE</span>
+                    <span className="text-[10px] font-mono text-primary font-bold">VISUAL_FEED_ACTIVE</span>
                   </div>
                 </div>
               </div>

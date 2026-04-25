@@ -7,10 +7,22 @@
       "imageHint": "futuristic robot"
     },
     {
-      "id": "partner-meeting",
-      "description": "High-tech control room with digital screens and engineers",
-      "imageUrl": "https://picsum.photos/seed/cyber-room/800/600",
-      "imageHint": "control room"
+      "id": "industrial-arm",
+      "description": "Precision industrial robotic arm working on a circuit board with laser lights",
+      "imageUrl": "https://picsum.photos/seed/industrial-arm/1200/800",
+      "imageHint": "robotic arm"
+    },
+    {
+      "id": "logistics-bot",
+      "description": "Autonomous mobile robots navigating a futuristic smart warehouse",
+      "imageUrl": "https://picsum.photos/seed/smart-warehouse/1200/800",
+      "imageHint": "logistics robot"
+    },
+    {
+      "id": "humanoid-interface",
+      "description": "Advanced humanoid robot interacting with a holographic digital interface",
+      "imageUrl": "https://picsum.photos/seed/robot-hologram/1200/800",
+      "imageHint": "robot interface"
     }
   ]
 }
