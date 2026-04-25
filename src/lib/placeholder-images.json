@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-robot",
+      "description": "Sophisticated industrial robot arm in a clean high-tech facility",
+      "imageUrl": "https://picsum.photos/seed/robot1/1200/800",
+      "imageHint": "industrial robot"
+    },
+    {
+      "id": "partner-meeting",
+      "description": "Professional business meeting with engineers looking at robot blueprints",
+      "imageUrl": "https://picsum.photos/seed/meeting1/600/400",
+      "imageHint": "business meeting"
+    }
+  ]
 }
