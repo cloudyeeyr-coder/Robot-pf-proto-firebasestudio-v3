@@ -1,6 +1,7 @@
 
 "use client"
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
@@ -44,6 +45,16 @@ const SIDEBAR_ITEMS: Record<Exclude<UserRole, 'buyer'>, { label: string; href: s
 
 export function Sidebar({ role }: { role: Exclude<UserRole, 'buyer'> }) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <aside className="hidden md:flex w-64 shrink-0" />;
+  }
+
   const items = SIDEBAR_ITEMS[role];
 
   return (
