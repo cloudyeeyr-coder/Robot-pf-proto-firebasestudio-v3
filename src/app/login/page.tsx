@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Loader2, ArrowRight, Github, Chrome, ShieldLock } from "lucide-react";
+import { Loader2, ArrowRight, Github, Chrome, ShieldCheck } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function LoginPage() {
@@ -49,7 +49,7 @@ export default function LoginPage() {
           
           <CardHeader className="space-y-2 text-center pt-10">
             <div className="mx-auto w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center mb-2">
-              <ShieldLock className="h-6 w-6 text-primary" />
+              <ShieldCheck className="h-6 w-6 text-primary" />
             </div>
             <CardTitle className="text-3xl font-black tracking-tighter uppercase italic">
               LOGIN <span className="text-primary text-glow">PROTOCOL</span>
