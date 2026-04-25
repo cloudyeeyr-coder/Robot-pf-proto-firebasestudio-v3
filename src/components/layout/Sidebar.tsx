@@ -47,7 +47,7 @@ export function Sidebar({ role }: { role: Exclude<UserRole, 'buyer'> }) {
   const items = SIDEBAR_ITEMS[role];
 
   return (
-    <aside className="hidden md:flex w-64 flex-col fixed left-0 top-24 bottom-0 border-r border-white/5 bg-background/50 backdrop-blur-xl p-4 z-40">
+    <aside className="hidden md:flex w-64 flex-col sticky top-24 self-start h-[calc(100vh-6rem)] border-r border-white/5 bg-background/30 backdrop-blur-xl p-4 z-40">
       <nav className="flex flex-col space-y-2" aria-label="관리 메뉴">
         {items.map((item) => (
           <Link
