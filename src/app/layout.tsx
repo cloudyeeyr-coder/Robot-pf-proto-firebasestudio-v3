@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'RoboSI Connect | 로봇 SI 안심 보증 매칭 플랫폼',
-  description: '로봇 SI 파트너와 수요기업을 잇는 가장 안전한 방법',
+  title: 'Ropto | 로보틱스 시스템 매칭 플랫폼',
+  description: '로봇 SI 파트너와 수요기업을 잇는 가장 혁신적인 기술 매칭 플랫폼',
 };
 
 export default function RootLayout({

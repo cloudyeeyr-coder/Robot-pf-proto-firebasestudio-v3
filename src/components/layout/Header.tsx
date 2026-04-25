@@ -71,8 +71,8 @@ export function Header() {
             <div className="h-8 w-8 bg-primary flex items-center justify-center skew-x-[-12deg] group-hover:scale-110 transition-transform">
               <Cpu className="h-5 w-5 text-primary-foreground skew-x-[12deg]" />
             </div>
-            <span className="text-xl font-black text-white tracking-tighter uppercase italic">
-              RoboSI <span className="text-primary not-italic">Connect</span>
+            <span className="text-2xl font-black text-white tracking-tighter uppercase italic">
+              ROPTO
             </span>
           </Link>
 
