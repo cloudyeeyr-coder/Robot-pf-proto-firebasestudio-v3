@@ -8,16 +8,11 @@ export interface User {
   avatarUrl?: string;
 }
 
-// In a real app, this would come from Supabase Auth session
-export const mockUser: User | null = {
-  id: 'user-123',
-  email: 'test@example.com',
-  role: 'buyer',
-  name: '홍길동',
-  avatarUrl: 'https://picsum.photos/seed/user1/200/200'
-};
+// 초기 접속 시 로그인되지 않은 상태를 시뮬레이션하기 위해 null로 설정합니다.
+// 실제 테스트를 위해 데이터를 넣으려면 이 부분을 수정하세요.
+export const mockUser: User | null = null;
 
 export const getSession = () => {
-  // Simulate fetching session
+  // 세션을 가져오는 시뮬레이션
   return mockUser;
 };
