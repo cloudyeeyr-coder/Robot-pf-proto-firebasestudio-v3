@@ -51,41 +51,47 @@ export function Sidebar({ role }: { role: Exclude<UserRole, 'buyer'> }) {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return <aside className="hidden md:flex w-64 shrink-0" />;
-  }
-
   const items = SIDEBAR_ITEMS[role];
 
   return (
     <aside className="hidden md:flex w-64 flex-col sticky top-24 self-start h-[calc(100vh-6rem)] border-r border-white/5 bg-background/30 backdrop-blur-xl p-4 z-40">
-      <nav className="flex flex-col space-y-2" aria-label="관리 메뉴">
-        {items.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={cn(
-              "flex items-center gap-3 px-4 py-3 rounded-none text-[11px] font-black uppercase tracking-widest transition-all",
-              pathname === item.href || (item.href !== '/admin' && pathname.startsWith(item.href))
-                ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(0,102,255,0.3)]" 
-                : "text-white/40 hover:bg-white/5 hover:text-white"
-            )}
-          >
-            <item.icon className="h-4 w-4" />
-            <span>{item.label}</span>
-          </Link>
-        ))}
-      </nav>
-      <div className="mt-auto pt-4 border-t border-white/5">
-        <p className="text-[11px] text-white/20 uppercase tracking-[0.3em] font-black px-4 py-2">Support_Nodes</p>
-        <Link 
-          href="/support" 
-          className="flex items-center gap-3 px-4 py-3 text-[11px] font-bold text-white/40 hover:text-primary transition-colors"
-        >
-          <MessageSquare className="h-4 w-4" />
-          <span>HELP_DESK</span>
-        </Link>
-      </div>
+      {mounted ? (
+        <>
+          <nav className="flex flex-col space-y-2" aria-label="관리 메뉴">
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex items-center gap-3 px-4 py-3 rounded-none text-[11px] font-black uppercase tracking-widest transition-all",
+                  pathname === item.href || (item.href !== '/admin' && pathname.startsWith(item.href))
+                    ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(0,102,255,0.3)]" 
+                    : "text-white/40 hover:bg-white/5 hover:text-white"
+                )}
+              >
+                <item.icon className="h-4 w-4" />
+                <span>{item.label}</span>
+              </Link>
+            ))}
+          </nav>
+          <div className="mt-auto pt-4 border-t border-white/5">
+            <p className="text-[11px] text-white/20 uppercase tracking-[0.3em] font-black px-4 py-2">Support_Nodes</p>
+            <Link 
+              href="/support" 
+              className="flex items-center gap-3 px-4 py-3 text-[11px] font-bold text-white/40 hover:text-primary transition-colors"
+            >
+              <MessageSquare className="h-4 w-4" />
+              <span>HELP_DESK</span>
+            </Link>
+          </div>
+        </>
+      ) : (
+        <div className="space-y-4 animate-pulse">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="h-10 bg-white/5 rounded-none" />
+          ))}
+        </div>
+      )}
     </aside>
   );
 }
