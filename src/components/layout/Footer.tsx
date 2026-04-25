@@ -1,5 +1,7 @@
+
 import Link from "next/link";
-import { Cpu, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
+import { RoptoLogo } from "@/components/brand/RoptoLogo";
 
 export function Footer() {
   return (
@@ -9,13 +11,8 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
           <div className="space-y-6 md:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="h-6 w-6 bg-primary flex items-center justify-center skew-x-[-12deg]">
-                <Cpu className="h-4 w-4 text-primary-foreground skew-x-[12deg]" />
-              </div>
-              <span className="text-2xl font-black text-white tracking-tighter uppercase italic">
-                ROPTO
-              </span>
+            <Link href="/">
+              <RoptoLogo />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm font-light">
               로봇 SI 파트너의 신뢰를 데이터로 증명하고, 

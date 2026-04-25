@@ -1,8 +1,9 @@
+
 "use client"
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, LogOut, User, LayoutDashboard, Search, Cpu } from "lucide-react";
+import { Menu, Search, User, LayoutDashboard, LogOut } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,6 +19,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NotificationBell } from "./NotificationBell";
 import { getSession, UserRole } from "@/lib/auth-mock";
 import { cn } from "@/lib/utils";
+import { RoptoLogo } from "@/components/brand/RoptoLogo";
 
 const NAV_ITEMS: Record<UserRole, { label: string; href: string }[]> = {
   buyer: [
@@ -67,13 +69,8 @@ export function Header() {
     )}>
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         <div className="flex items-center gap-16">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="h-8 w-8 bg-primary flex items-center justify-center skew-x-[-12deg] group-hover:scale-110 transition-transform">
-              <Cpu className="h-5 w-5 text-primary-foreground skew-x-[12deg]" />
-            </div>
-            <span className="text-2xl font-black text-white tracking-tighter uppercase italic">
-              ROPTO
-            </span>
+          <Link href="/">
+            <RoptoLogo />
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-10" aria-label="Main Navigation">
