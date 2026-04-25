@@ -34,6 +34,11 @@ export function Footer() {
               <li><Link href="/calculator" className="text-muted-foreground hover:text-white transition-colors">ROI Simulation</Link></li>
               <li><Link href="/escrow-info" className="text-muted-foreground hover:text-white transition-colors">Escrow Protocol</Link></li>
               <li><Link href="/as-info" className="text-muted-foreground hover:text-white transition-colors">SLA Management</Link></li>
+              <li className="pt-2 border-t border-white/5">
+                <Link href="/admin" className="text-primary font-black hover:text-glow transition-all uppercase tracking-widest text-[10px]">
+                  _Admin Portal
+                </Link>
+              </li>
             </ul>
           </div>
 
