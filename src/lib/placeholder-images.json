@@ -2,15 +2,15 @@
   "placeholderImages": [
     {
       "id": "hero-robot",
-      "description": "Sophisticated industrial robot arm in a clean high-tech facility",
-      "imageUrl": "https://picsum.photos/seed/robot1/1200/800",
-      "imageHint": "industrial robot"
+      "description": "Futuristic humanoid robot hand reaching out in a high-tech lab with glowing blue light",
+      "imageUrl": "https://picsum.photos/seed/future-robot/1200/800",
+      "imageHint": "futuristic robot"
     },
     {
       "id": "partner-meeting",
-      "description": "Professional business meeting with engineers looking at robot blueprints",
-      "imageUrl": "https://picsum.photos/seed/meeting1/600/400",
-      "imageHint": "business meeting"
+      "description": "High-tech control room with digital screens and engineers",
+      "imageUrl": "https://picsum.photos/seed/cyber-room/800/600",
+      "imageHint": "control room"
     }
   ]
 }
