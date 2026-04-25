@@ -92,7 +92,7 @@ export default function HomePage() {
                   <div className="absolute inset-8 border border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
                   
                   <div className="absolute inset-0 flex items-center justify-center p-8 md:p-12">
-                    <Carousel className="w-full h-full">
+                    <Carousel className="w-full h-full" opts={{ loop: true }}>
                       <CarouselContent className="h-full">
                         {heroImages.map((image, index) => (
                           <CarouselItem key={index} className="h-full">
@@ -112,11 +112,11 @@ export default function HomePage() {
                       </CarouselContent>
                       
                       {/* Custom Navigation Buttons */}
-                      <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
-                        <CarouselPrevious className="static translate-y-0 h-10 w-10 bg-background/50 border-white/10 hover:bg-primary hover:text-white transition-all rounded-none skew-x-[-12deg]">
+                      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20">
+                        <CarouselPrevious className="static translate-y-0 h-12 w-12 bg-background/50 border-white/10 hover:bg-primary hover:text-white transition-all rounded-none skew-x-[-12deg]">
                           <ChevronLeft className="h-6 w-6 skew-x-[12deg]" />
                         </CarouselPrevious>
-                        <CarouselNext className="static translate-y-0 h-10 w-10 bg-background/50 border-white/10 hover:bg-primary hover:text-white transition-all rounded-none skew-x-[-12deg]">
+                        <CarouselNext className="static translate-y-0 h-12 w-12 bg-background/50 border-white/10 hover:bg-primary hover:text-white transition-all rounded-none skew-x-[-12deg]">
                           <ChevronRight className="h-6 w-6 skew-x-[12deg]" />
                         </CarouselNext>
                       </div>
@@ -126,7 +126,7 @@ export default function HomePage() {
                   {/* HUD Elements */}
                   <div className="absolute -top-4 -right-4 glass-panel p-4 rounded-xl border-primary/30 flex items-center gap-3 animate-pulse z-20">
                     <Terminal className="h-4 w-4 text-primary" />
-                    <span className="text-[10px] font-mono text-primary font-bold">VISUAL_FEED_ACTIVE</span>
+                    <span className="text-[10px] font-mono text-primary font-bold uppercase tracking-widest">Visual_Feed_Active</span>
                   </div>
                 </div>
               </div>
